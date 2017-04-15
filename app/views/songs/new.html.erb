@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<h1>Create Your Favorite Song Here</h1>
+
+	<% if (@song.errors.any?) %>
+	<h3>Error Messages:</h3>
+		<% @song.errors.full_messages.each do |err| %>
+			<%= err %><br>
+			<% end %>
+		<%end%><br>
+	<%= form_for @song do |song| %>
+		<%= song.label "Song Title:" %><br>
+		<%= song.text_field :title %><br>
+		<%= song.label "Please check if the movie has been released:" %><br>
+		<%= song.check_box :released %><br>
+		<%= song.label "Release Year:" %><br>
+		<%= song.number_field :release_year %><br>
+		<%= song.label "Artist Name:" %><br>
+		<%= song.text_field :artist_name %><br>
+		<%= song.label "Genre:" %><br>
+		<%= song.text_field :genre %><br><br>
+		<%= song.submit "Click to Save the Song"%>
+		<% end %>
+
+</body>
+</html>

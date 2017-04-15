@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+	<h3>Title: <%=@song.title%></h3>
+		Released Status: <%= @song.released %><br>
+		Release Year: <%= @song.release_year %><br>
+		Genre: <%= @song.genre %><br>
+		Artist Name: <%= @song.artist_name %>
+	<br><br>
+	<form action="/songs" method="get">
+	<input type="submit" value="Home Page">
+	</form>
+
+</body>
+</html>
